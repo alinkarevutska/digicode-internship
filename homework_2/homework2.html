@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alina Revutska">
+    <meta name="description" content="HTML forms practice">
+    <meta name="keywords" content="HTML, form, semantic">
+    <link rel="stylesheet" href="style.css">
+    <title>Homework 2 Revutska</title>
+</head>
+<body>
+    <header>
+        <button>Увійти</button>
+
+        <form action="#" autocomplete="off" method="GET" class="header_form">
+            <label for="header_search"></label>
+            <input type="search" name="header_search" id="header_search" placeholder="Пошук">
+            <input type="image" src="./images/search_button.jpg" alt="search_button">
+        </form>
+
+        <a href="#">
+            <img src="./images/logo.jpg" alt="main_logo">
+        </a>
+      
+        <details>
+            <summary>
+                <button>&#129530; Кошик</button>
+            </summary>
+            <p> 3 товари 530 грн.</p>
+        </details>
+
+        <nav>
+                <a href="#">Головна</a>
+                <a href="#">Про видавництво</a>
+                <a href="#">Наші книги</a>
+                <a href="#">Е-книги</a>
+                <a href="#">Комплекти</a>
+                <a href="#">Розпродаж</a>
+                <a href="#">Футболки/торбинки</a>
+                <a href="#">Контакти</a>
+                <a href="#">Інформація для замовлень</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+                <p>Ви постійний покупець?</p>
+                <button>Щоб увійти, клацніть сюди</button>
+       
+                <p>Є купон?</p>
+                <button>Натисніть тут, щоб ввести код</button>
+        </aside>
+
+        <br />
+
+       <form action="action.php" method="POST" autocomplete="off">
+            <fieldset>
+                <legend>Оплата і доставка</legend>
+                <label for="first_name">Ім'я*</label>
+                <input type="text" name="first_name" id="first_name" required>
+                <br /><br />
+
+                <label for="second_name">Прізвище*</label>
+                <input type="text" name="second_name" id="second_name" required>
+                <br /><br />
+
+                <label for="company">Компанія (організація)</label>
+                <input type="text" name="company" id="company" size="55">
+                <br /><br />
+
+                <label for="e-mail">E-mail*</label>
+                <input type="email" name="e-mail" id="e-mail" required autocomplete="on">
+                <br /><br />
+
+                <label for="phone">Телефон*</label>
+                <input type="tel" name="phone" id="phone" required 
+                autocomplete="on" maxlength="13" minlength="10">
+                <br /><br />
+
+                <label for="delivery_method">Спосіб доставки*</label>
+                <select name="delivery_method" id="delivery_method">
+                    <option value="nova_poshta" selected>Нова пошта</option>
+                    <option value="pickup">Самовивіз</option>
+                </select>
+                <br /><br />
+
+                <label for="delivery_address">Адреса</label>
+                <input type="text" name="delivery_address" id="delivery_address" 
+                placeholder="Населений пункт" list="delivery_list" size="70" required>
+                <datalist id="delivery_list">
+                    <option value="Київ">Київ</option>
+                    <option value="Харків">Харків </option>
+                    <option value="Полтава">Полтава</option>
+                </datalist>
+                <br /><br />
+
+                <label for="post_office_number">Номер відділення/складу Нової пошти</label>
+                <input type="number" name="post_office_number" 
+                id="post_office_number" min="1" step="1" required>
+                <br /><br />
+
+                <input type="checkbox" name="create_profile" id="create_profile">
+                <label for="create_profile">Створити профіль?</label>
+            </fieldset>
+
+            <br />
+
+            <fieldset>
+                <legend>Ваше замовлення</legend>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Товар</th>
+                            <th>Всього</th> 
+                        </tr>               
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Бірманські будні <strong>x1</strong></td>
+                            <td>150 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Хрестоносці <strong>x1</strong></td>
+                            <td>230 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Диявол і Господь Бог <strong>x1</strong><br></td>
+                            <td>150 грн</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Підсумок</td>
+                            <td>530 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Сума замовлення</td>
+                            <td>530 грн</td>
+                        </tr>
+                       </tfoot>
+                </table>
+
+                <br />
+
+                <input type="radio" name="payment_type" id="past_payment_type" value="past_payment">
+                <label for="past_payment_type">Післяплата<br />
+                    Оплата на пошті при отриманні замовлення
+                </label>
+                <br /> <br />
+
+                <input type="radio" name="payment_type" id="pre_payment_type" 
+                value="pre_payment" checked>
+                <label for="pre_payment_type">Оплата кредитною карткою</label>
+            </fieldset>
+
+            <br />
+            <button type="submit">Оформити замовлення</button>
+        </form>
+
+        <section>
+            <article>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, placeat?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium repudiandae? Quidem!
+                </p>
+
+                <p> 
+                    * Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur excepturi illum minus, incidunt alias enim libero nobis natus dolores. Ipsa optio facilis sed cupiditate, asperiores excepturi ea dolorum ipsam. Ea iste reprehenderit dolore error eos aspernatur quas. Officiis iusto corrupti tempora, quas consequatur provident vel tenetur doloremque eveniet in recusandae.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam nesciunt quae architecto ut distinctio voluptatum, unde commodi reprehenderit nam sed iusto nostrum, ad beatae minima animi molestiae exercitationem eos quidem sunt libero fugiat autem. Natus sed sit neque accusantium sequi!
+                </p>
+            </article>
+        </section>
+
+        <hr />
+    </main>
+
+    <footer>
+        <section>
+            <span>2016-2021, Видавництво Жупанського</span>
+            <a href="#" target="blank">Політика відшкодування та повернення</a>
+        </section>
+
+        <section>
+            <a href="https://www.facebook.com/" target="blank">Facebook-спільнота</a>
+            <span>Розробка сайту - Kolodiy.info</span>
+        </section>
+
+        <a href="http://zahid-shid.net/" target="blank">
+            <img src="./images/zs_banner.gif" alt="banner">
+        </a>
+       
+    </footer>
+</body>
+</html>
