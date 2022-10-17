@@ -1,0 +1,45 @@
+.header_form input[type=image] {
+    position: relative;
+    right: 25px;
+    top: 5px;
+}
+
+table {
+    width: 30%;
+} 
+
+table, tr, td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+}
+
+tfoot tr:last-of-type {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+nav {
+    text-align: center;
+    background: #3D3D3D;
+    padding: 15px 0;
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+main {
+    background: #EBEBEB;
+}
+
+footer {
+    background: #a0a0a0;
+}
