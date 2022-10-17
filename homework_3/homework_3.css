@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+img {
+    width: 100%;
+}
+header {
+    background: url("images/sky.jpg") center / cover no-repeat;
+    text-align: center;
+}
+h1 {
+    padding: 30px;
+    font-size: 60px;
+}
+header li {
+    list-style-type: none;
+    display: inline;
+}
+header p {
+    padding-bottom: 20px;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #8F91FC;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 5px;
+}
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 27% 1fr 15%;
+    grid-gap: 20px;
+}
+.purple {
+    background-color: #C0C1F6;
+    padding: 30px 20px;
+}
+article > h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+article span {
+    display: inline-block;
+    padding-bottom: 10px;
+}
+article p, section h3 {
+    margin: 10px 0;
+}
+section h4 {
+    margin: 15px 0;
+}
+.main-posts {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+}
+.main-posts, aside {
+    display: grid;
+    grid-row-gap: 20px;
+}
+.about-me {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.popular-posts {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.follow-me {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+.about-me img {
+    padding-bottom: 15px;
+}
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+@media screen and (max-width: 800px) and (min-width: 425px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    } 
+    aside {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+    }
+    .about-me {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .popular-posts {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .follow-me {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    h1 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 30px;
+    }
+}
