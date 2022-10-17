@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alina Revutska">
+    <meta name="description" content="CSS styles practice">
+    <meta name="keywords" content="form, CSS, adaptive">
+    <script src="https://kit.fontawesome.com/754ab2f32e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Homework 4 Revutska</title>
+</head>
+<body>
+    <header>
+        <div class="header-first-line wide-container">
+            <div class="header-basket first-line-basket">
+                <i class="fas fa-shopping-basket"></i>
+                <a href="#">Кошик</a>
+                <p>3 товари <span>530 грн.</span></p>
+            </div>
+
+            <div class="header-basket first-line-basket-small">
+                    <i class="fas fa-shopping-basket"></i>
+                    <a href="#">Кошик</a>
+                   <span>530 грн.</span>
+            </div>
+
+            <div class="first-line-user-panel">
+                <a href="#" class="first-line-user">
+                    <i class="far fa-user "></i>
+                </a>
+                
+                <a href="#" class="first-line-search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+           
+
+            <i class="fas fa-sign-in-alt first-line-login"></i>
+            <a href="#" class="first-line-login-link">Увійти</a>
+        </div>
+        
+        <section class="header-info wide-container">
+            <form action="#" autocomplete="off" method="GET" class="header-form">
+                <label for="header_search"></label>
+                <input type="search" name="header_search" id="header_search" placeholder="Пошук" >
+                <input type="image" src="./files/search_button.jpg" alt="search_button">
+            </form>
+
+            <div class="header_burger">
+                <span></span>
+            </div>
+            
+            <a href="#" class="header_logo_link">
+                <img src="./files/logo.jpg" alt="main_logo">
+            </a>
+          
+            <div class="header-basket">
+                <i class="fas fa-shopping-basket"></i>
+                <a href="#">Кошик</a>
+                <p>3 товари <span>530 грн.</span></p>
+            </div>
+        </section>
+       
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Головна</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Про видавництво</a>
+                    <div class="dropdown-content">
+                        <a href="#">Автори</a>
+                        <a href="#">Книгарні</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Наші книги</a>
+                    <div class="dropdown-content">
+                        <a href="#">Лауреати Нобелівської премії</a>
+                        <a href="#">Майстри світової прози</a>
+                        <a href="#">AD Astra</a>
+                        <a href="#">Амальгама</a>
+                        <a href="#">Nonfiction</a>
+                        <a href="#">Життєписи</a>
+                        <a href="#">Зарубіжна література</a>
+                        <a href="#">Альтернатива</a>
+                        <a href="#">Наукова література</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Е-книги</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Комплекти</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Розпродаж</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Футболки/торбинки</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Контакти</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown_link">Інформація для замовлень</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="wide-container">
+        <aside>
+            <div class="permanent_client">
+                <p>Ви постійний покупець?</p>
+                <a href="#">Щоб увійти, клацніть сюди</a>
+            </div>
+                
+            <div class="coupon">
+                <img src="./files/alert-2.png" alt="coupon">
+                    <p>Є купон?
+                    <a href="#">Натисніть тут, щоб ввести код</a>
+                    </p>
+                    
+            </div> 
+        </aside>
+
+        <br />
+
+       <form action="action.php" method="POST" autocomplete="off" class="order_form">
+            <fieldset class="payment_delivery">
+                <legend>Оплата і Доставка</legend>
+                
+                <div class="first_name input_wrapper">
+                    <label for="first_name">Ім'я <span title="Обов'язкове поле">*</span></label>
+                    <input type="text" name="first_name" id="first_name" required>
+                </div>
+
+                <div class="second_name input_wrapper">
+                    <label for="second_name">Прізвище<span title="Обов'язкове поле">*</span></label>
+                    <input type="text" name="second_name" id="second_name" required>
+                </div>
+
+                <div class="company input_wrapper wide_input">
+                    <label for="company">Компанія (організація)</label>
+                    <input type="text" name="company" id="company" size="55">
+                </div>
+
+                <div class="e_mail input_wrapper">
+                    <label for="e-mail">E-mail<span title="Обов'язкове поле">*</span> </label>
+                    <input type="email" name="e-mail" id="e-mail" required autocomplete="on">
+                </div>
+
+                <div class="phone input_wrapper">
+                    <label for="phone">Телефон<span title="Обов'язкове поле">*</span></label>
+                    <input type="tel" name="phone" id="phone" required 
+                    autocomplete="on" maxlength="13" minlength="10">
+                </div>
+
+                <div class="delivery_method input_wrapper wide_input">
+                    <label for="delivery_method">Спосіб доставки<span title="Обов'язкове поле">*</span></label>
+                        <select name="delivery_method" id="delivery_method">
+                            <option value="nova_poshta" selected>Нова пошта</option>
+                            <option value="pickup">Самовивіз</option>
+                        </select>
+                </div>
+               
+                <div class="delivery_address input_wrapper wide_input">
+                    <label for="delivery_address">Адреса</label>
+                    <input type="text" name="delivery_address" id="delivery_address" 
+                    placeholder="Населений пункт" list="delivery_list" size="70" required>
+                    <datalist id="delivery_list">
+                        <option value="Київ">Київ</option>
+                        <option value="Харків">Харків </option>
+                        <option value="Полтава">Полтава</option>
+                    </datalist>
+                </div>
+
+                <div class="post_office_number input_wrapper wide_input">
+                    <label for="post_office_number">Номер відділення/складу Нової пошти</label>
+                    <input type="number" name="post_office_number" 
+                    id="post_office_number" min="1" step="1" required>
+                </div>
+               
+                <div class="create_profile input_wrapper">
+                    <input type="checkbox" name="create_profile" id="create_profile">
+                    <label for="create_profile">Створити профіль?</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="order_details">
+                <legend>Ваше замовлення</legend>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Товар</th>
+                            <th>Всього</th> 
+                        </tr>               
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Бірманські будні <strong>x1</strong></td>
+                            <td>150 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Хрестоносці <strong>x1</strong></td>
+                            <td>230 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Диявол і Господь Бог <strong>x1</strong><br></td>
+                            <td>150 грн</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Підсумок</td>
+                            <td>530 грн</td>
+                        </tr>
+                        <tr>
+                            <td>Сума замовлення</td>
+                            <td>530 грн</td>
+                        </tr>
+                       </tfoot>
+                </table>
+
+                <div class="pre_payment">
+                    <input type="radio" name="payment_type" id="pre_payment_type" 
+                    value="pre_payment" checked>
+                    <label for="pre_payment_type" class="pre_payment_type"><span></span>Оплата кредитною карткою</label>
+                    <span class="pre_payment_details">Оплата з допомогою платіжної системи LiqPay: Приват24, готівкою у терміналі, карткою будь-якого банку.</span>
+                </div>
+                
+                <div class="post_payment">
+                    <input type="radio" name="payment_type" id="post_payment_type" value="post_payment">
+                    <label for="post_payment_type" class="post_payment_type"><span></span>Післяплата</label>
+                </div>
+
+                <button type="submit">Оформити замовлення</button>
+            </fieldset>
+        </form>
+
+        <section>
+            <article class="delivery_rules">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, placeat?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, praesentium repudiandae? Quidem!
+                </p>
+
+                <p> 
+                    * Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur excepturi illum minus, incidunt alias enim libero nobis natus dolores. Ipsa optio facilis sed cupiditate, asperiores excepturi ea dolorum ipsam. Ea iste reprehenderit dolore error eos aspernatur quas. Officiis iusto corrupti tempora, quas consequatur provident vel tenetur doloremque eveniet in recusandae.
+                </p>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam nesciunt quae architecto ut distinctio voluptatum, unde commodi reprehenderit nam sed iusto nostrum, ad beatae minima animi molestiae exercitationem eos quidem sunt libero fugiat autem. Natus sed sit neque accusantium sequi!
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="wide-container">
+        <div class="author_rights">
+            <span>2016-2021, Видавництво Жупанського</span> <br /> 
+            <a href="#" target="blank">Політика відшкодування та повернення</a>
+        </div>
+
+        <a href="https://www.facebook.com/" target="blank" class="facebook_link"> 
+            <i class="fab fa-facebook-square"></i>
+            Facebook-спільнота
+        </a>
+
+        <a href="http://zahid-shid.net/" target="blank" class="developer_link">
+            Розробка сайту - Kolodiy.info
+        </a> 
+    </footer>
+</body>
+</html>
