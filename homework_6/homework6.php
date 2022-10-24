@@ -124,5 +124,52 @@
         };
     };
     ?>
+    
+        <h2>Завдання 2</h2>
+    <p>
+    Кіт Шкрябко відсвяткував свій день народження <i><strong>X</strong></i> хв тому. Визначте, якого числа та місяця день народження у Шкрябка та виведіть на сторінку у вигляді: “Кіт Шкрябко відсвяткував свій день народження <i><strong>8000</strong></i> хв тому. День народження Шкрябка – 9-го червня.” (Число <i><strong>X</strong></i> повинно задаватись випадковим чином у межах від 10000 до 500000.) 
+    </p>
+
+    <?php 
+    define("MIN_X_VALUE", 10000);
+    define("MAX_X_VALUE", 500000);
+    $randomX = random_int(MIN_X_VALUE, MAX_X_VALUE);
+
+    function randomMinToSec($randomMin) {
+        $timeInSec = $randomMin * 60;
+        return $timeInSec;
+    }
+
+    function getPastTimestamp($timeInSec) {
+        $now = time();
+        $pastTimeStamp = $now - $timeInSec;
+        return $pastTimeStamp;
+    }
+
+    function getDayAndMonth($pastTimeStamp) {
+        $calculatedDay = date("j", $pastTimeStamp);
+        $calculatedMonth = date("n", $pastTimeStamp);
+        
+        $EnMonthToUkr = [
+            1 => 'січня',
+            2 => 'лютого',
+            3 => 'березня',
+            4 => 'квітня',
+            5 => 'травня',
+            6 => 'червня',
+            7 => 'липня',
+            8 => 'серпня',
+            9 => 'вересня',
+            10 => 'жовтня',
+            11 => 'листопада',
+            12 => 'грудня',
+        ];
+        return $calculatedDay.' '.$EnMonthToUkr[$calculatedMonth];
+    }
+    ?>
+
+    <p>Кіт Шкрябко відсвяткував свій день народження <?php echo "<i><strong>$randomX</strong></i>"?> хв тому.
+    День народження Шкрябка - <?php echo getDayAndMonth(getPastTimestamp(randomMinToSec($randomX))).'.'?>
+    </p>
 </body>
 </html>
