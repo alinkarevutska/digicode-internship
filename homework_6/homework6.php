@@ -171,5 +171,157 @@
     <p>Кіт Шкрябко відсвяткував свій день народження <?php echo "<i><strong>$randomX</strong></i>"?> хв тому.
     День народження Шкрябка - <?php echo getDayAndMonth(getPastTimestamp(randomMinToSec($randomX))).'.'?>
     </p>
+    
+        <h2>Завдання 3</h2>
+    <p>
+        Конвертер одиниць часу. 
+        Доступні для конвертування одиниці: секунди, хвилини, години.
+    </p>
+
+    <?php 
+        define("VALUES", array("seconds", "minutes", "hours"));
+        define("TIME_CONST", 60);
+        $validationErrors = [];
+        $result = '';
+    ?>
+
+    <?php 
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            $amount = $_POST["amount"];
+            $valueFrom = $_POST["valueFrom"];
+            $valueTo = $_POST["valueTo"];
+
+            $validationErrors["valueFrom"] = validateValue($valueFrom);
+            $validationErrors["valueTo"] = validateValue($valueTo);
+            $validationErrors["amount"] = validateAmount($amount);
+
+            if(!array_filter($validationErrors)){
+                $result = convert($amount, $valueFrom, $valueTo);
+                $result = round($result, 4);
+            };
+        }
+    ?>
+
+    <form method="POST" class="converter" novalidate>
+        <label for="amount">Amount</label>
+        <input type="number" name="amount" id="amount">
+        <span>
+        <?php
+            echo $validationErrors["amount"];
+        ?>
+        </span>
+
+        <label for="valueFrom">From</label>
+        <select name="valueFrom" id="valueFrom">
+            <?php foreach (VALUES as $value) {
+                echo "<option value='$value'>$value</option>";
+            };
+            ?>
+        </select>
+        <span>
+        <?php 
+            echo $validationErrors["valueFrom"]; 
+        ?>
+        </span>
+
+        <label for="valueTo">To</label>
+        <select name="valueTo" id="valueTo">
+            <?php foreach (VALUES as $value) {
+                echo "<option value='$value'>$value</option>";
+            };
+            ?>
+        </select>
+        <span>
+        <?php 
+            echo $validationErrors["valueTo"];
+        ?>
+        </span>
+
+        <button type="submit">Convert</button>
+    </form>
+
+   <?php 
+     if($result) {
+        echo "<p>Result:</p>";
+        echo "$amount $valueFrom = $result $valueTo";
+    } 
+   ?>
+
+    <?php 
+    function validateValue($value){
+        if(empty($value)) {
+            return "Please enter time value";
+        };
+        if (in_array($value, VALUES)) {
+            return null;
+        }
+        else {
+            return "Time value should be one of the provided values";
+        };
+    };
+
+    function validateAmount($amount) {
+        if(empty($amount)) {
+            return "Please enter amount of time";
+        }
+        if(!floatval($amount)) {
+            return "Amount of time should be a number";
+        }
+        if($amount < 0) {
+            return "Amount of time should be a positive number";
+        }
+        return null;
+    };
+
+    function checkArray($array) {
+        for($i = 0; $i < count($array); $i++) {
+            if(!isset($array[$i])){
+                var_dump($array);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    // ["seconds", "minutes", "hours"]
+    function convert($amount, $valueFrom, $valueTo) {
+        if($valueFrom === $valueTo) {
+            return $amount;
+        };
+
+        switch($valueFrom) {
+            case VALUES[0]: 
+                // seconds to minutes
+                if($valueTo === VALUES[1]) {
+                    return $amount / TIME_CONST;
+                }
+                // seconds to hours
+                if($valueTo === VALUES[2]) {
+                    return $amount / pow(TIME_CONST, 2);
+                }
+                break;
+            case VALUES[1]: 
+                // minutes to seconds
+                if($valueTo === VALUES[0]) {
+                    return $amount * TIME_CONST;
+                }
+                // minutes to hours
+                if($valueTo === VALUES[2]) {
+                    return $amount / TIME_CONST;
+                }
+                break;
+            case VALUES[2]: 
+                // hours to seconds
+                if($valueTo === VALUES[0]) {
+                    return $amount * pow(TIME_CONST, 2);
+                }
+                // hours to minutes
+                if($valueTo === VALUES[1]) {
+                    return $amount * TIME_CONST;
+                }
+                break;
+        }
+    }
 </body>
 </html>
