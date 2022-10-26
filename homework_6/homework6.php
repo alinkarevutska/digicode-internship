@@ -275,18 +275,7 @@
         }
         return null;
     };
-
-    function checkArray($array) {
-        for($i = 0; $i < count($array); $i++) {
-            if(!isset($array[$i])){
-                var_dump($array);
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-    }
+    
     // ["seconds", "minutes", "hours"]
     function convert($amount, $valueFrom, $valueTo) {
         if($valueFrom === $valueTo) {
